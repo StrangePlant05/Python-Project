@@ -1,0 +1,41 @@
+{
+    "users": [
+        {
+            "username": "woah",
+            "password": "Woah123"
+        }
+    ],
+    "student_records": {
+        "2024000001": {
+            "name": "Ignacio, Clarence B.",
+            "course": "BSCS",
+            "year": "Fourth Year",
+            "section": "3A",
+            "grades": {
+                "FOC1": 96.0,
+                "MMW1": 99.99
+            }
+        },
+        "2024000002": {
+            "name": "Dacanay, Zeth Allen D.",
+            "course": "BSMCS",
+            "year": "Second Year",
+            "section": "1A",
+            "grades": {
+                "FOC1": 91.0,
+                "CAL1": 89.0
+            }
+        }
+    },
+    "default_courses": [
+        "BSIT",
+        "BSCS",
+        "BSMCS"
+    ],
+    "default_subjects": [
+        "MCS1",
+        "CAL1",
+        "FOC1",
+        "MMW1"
+    ]
+}
