@@ -581,11 +581,6 @@ def view_statistics():
     os.system("cls||clear")
 
     students = get_all_students()
-
-    if len(students) == 0:
-        print(Fore.YELLOW + "Database has no student records.")
-        questionary.press_any_key_to_continue().ask()
-        return
     
     # total average for all records
     total_all = 0
@@ -605,6 +600,10 @@ def view_statistics():
             if not student["course"] in courses_with_grades:
                 courses_with_grades.append(student["course"])
 
+    if total_all == 0:
+        print(Fore.YELLOW + "Database has no student records.")
+        questionary.press_any_key_to_continue().ask()
+        return
     print(Fore.YELLOW + "Total average grade:", Fore.CYAN + str(total_all / all_count))
 
 
