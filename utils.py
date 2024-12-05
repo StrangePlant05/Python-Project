@@ -185,8 +185,13 @@ def single_student_string(student_id:str|None, student:dict):
         formatted+="          ├ " + subject + ": " + str(value) + "\n"
 
     if total_grade != 0:
-        formatted += "     └" + " Average: "+ str(total_grade / grades_count) +"\n"
-
+        grades = {k: v for k, v in grades.items() if isinstance(v, (int, float))}
+        max_grade = max(grades, key=grades.get)
+        min_grade = min(grades, key=grades.get)
+        formatted += "     ├" + " Average: "+ str(total_grade / grades_count) +"\n"
+        formatted += "     ├" + " Highest Grade: "+ max_grade+", "+str(grades[max_grade]) +"\n"
+        formatted += "     └" + " Lowest Grade: "+ min_grade +", " + str(grades[min_grade]) +"\n"
+        
     return formatted
 
 def student_records_string_list(student_records):
