@@ -581,6 +581,11 @@ def view_statistics():
     os.system("cls||clear")
 
     students = get_all_students()
+
+    if len(students) == 0:
+        print(Fore.YELLOW + "Database has no student records.")
+        questionary.press_any_key_to_continue().ask()
+        return
     
     # total average for all records
     total_all = 0
