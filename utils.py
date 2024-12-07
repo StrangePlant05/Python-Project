@@ -96,7 +96,7 @@ def log_in():                       # log in function
         os.system("cls||clear")
         username=questionary.text(add+"Please enter your username (type exit to cancel):\n", style=question_style).ask()
 
-        if username == "exit":          
+        if username.lower() == "exit":          
             return False
         
         user = get_user(username)
@@ -131,7 +131,7 @@ def sign_up():                          # sign up function
         validate=validate_username_signup
     ).ask()
 
-    if username == "exit":
+    if username.lower() == "exit":
         return False
 
     password=questionary.password("Please enter your desired password (type exit to cancel):\n",        # enter password and use the password checker from before
@@ -139,14 +139,14 @@ def sign_up():                          # sign up function
         validate=lambda x:(valid_password(x) or x.lower() == "exit") or "Password must contain at least one lowercase, one uppercase, and one number."
     ).ask()
 
-    if password == "exit":
+    if password.lower() == "exit":
         return False
     
     confirm = questionary.password("Please enter your password again (type exit to cancel):\n",         # simple confirm password
         style=question_style,
         validate=lambda x: (x == password or x == "exit") or "Password doesn't match").ask()
     
-    if confirm == "exit":
+    if confirm.lower() == "exit":
         return False
     
     add_user({"username": username, "password": password})
