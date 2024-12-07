@@ -431,6 +431,11 @@ def modify_student_record(student, student_id, add=""):
                                 return
 
                             grade = float(grade)
+                            if grade > 100 or grade < 0:
+                                modify_student_record(student=student, student_id=student_id, add="Invalid grade\n")
+                                return
+
+
                             student["grades"][subjects[answer]] = grade
                             modify_student_record(student=student, student_id=student_id)
                             return

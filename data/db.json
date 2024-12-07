@@ -94,12 +94,12 @@
             }
         },
         "2024000010": {
-            "name": "Jimenez Eduard",
+            "name": "Jimenez, Eduard",
             "course": "BSIT",
-            "year": "Third Year",
+            "year": "Fourth Year",
             "section": "3a",
             "grades": {
-                "CAL1": "Undefined",
+                "CAL1": 74.0,
                 "MMW1": "Undefined"
             }
         },
